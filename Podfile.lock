@@ -1,0 +1,32 @@
+PODS:
+  - Floaty (4.1.0)
+  - Realm (10.24.2):
+    - Realm/Headers (= 10.24.2)
+  - Realm/Headers (10.24.2)
+  - RealmSwift (10.24.2):
+    - Realm (= 10.24.2)
+  - SwiftMessages (9.0.6):
+    - SwiftMessages/App (= 9.0.6)
+  - SwiftMessages/App (9.0.6)
+
+DEPENDENCIES:
+  - Floaty
+  - RealmSwift
+  - SwiftMessages
+
+SPEC REPOS:
+  trunk:
+    - Floaty
+    - Realm
+    - RealmSwift
+    - SwiftMessages
+
+SPEC CHECKSUMS:
+  Floaty: 1a4e213f3512cf3045ef9cb0c1ff456226d1f66a
+  Realm: c8421eee9ff92b16b4f91a313b5cc695c37c1921
+  RealmSwift: 10ed6fa09c36aaaff55e12afdc71802ec3ddb1c0
+  SwiftMessages: f0c7ef4705a570ad6c5e208b611f4333e660ed92
+
+PODFILE CHECKSUM: e24bdbcc02ed04381cef56f1a2b9adb89b2bcf58
+
+COCOAPODS: 1.11.2

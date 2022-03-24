@@ -3,19 +3,33 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76AFE88810E902F14CB038DD /* Pods_MilkBillManeger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6515ACBB10642D023FAD5AD /* Pods_MilkBillManeger.framework */; };
+		7E0843F827E46C6900C9D459 /* BillManegerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E0843F727E46C6900C9D459 /* BillManegerViewModel.swift */; };
 		7E38B51027E3402200AFFA7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E38B50F27E3402200AFFA7D /* AppDelegate.swift */; };
 		7E38B51227E3402200AFFA7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E38B51127E3402200AFFA7D /* SceneDelegate.swift */; };
 		7E38B51427E3402200AFFA7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E38B51327E3402200AFFA7D /* ViewController.swift */; };
 		7E38B51727E3402200AFFA7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E38B51527E3402200AFFA7D /* Main.storyboard */; };
 		7E38B51927E3402400AFFA7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E38B51827E3402400AFFA7D /* Assets.xcassets */; };
 		7E38B51C27E3402400AFFA7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E38B51A27E3402400AFFA7D /* LaunchScreen.storyboard */; };
+		7E38B52527E3428200AFFA7D /* BillManegerRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E38B52427E3428200AFFA7D /* BillManegerRealm.swift */; };
+		7E38B52827E3439700AFFA7D /* AddDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E38B52727E3439700AFFA7D /* AddDataViewController.swift */; };
+		7E391D1A27E99BD300E72849 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E391D1927E99BD300E72849 /* FilterView.swift */; };
+		7E391D1D27E99BEF00E72849 /* FilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E391D1C27E99BEF00E72849 /* FilterView.xib */; };
+		7E3DD92327EC2F5E00FB0081 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3DD92227EC2F5E00FB0081 /* SettingsViewController.swift */; };
+		7E4612E527E85F9A000B0607 /* ShowDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4612E327E85F9A000B0607 /* ShowDataTableViewCell.swift */; };
+		7E4612E627E85F9A000B0607 /* ShowDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E4612E427E85F9A000B0607 /* ShowDataTableViewCell.xib */; };
+		7E586BC127EC313000E75590 /* BillCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E586BC027EC313000E75590 /* BillCalculatorViewController.swift */; };
+		7EC6921127E897C8001AC299 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC6921027E897C8001AC299 /* DataModel.swift */; };
+		7EFAA37727EC66A700339337 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFAA37527EC66A700339337 /* HeaderTableViewCell.swift */; };
+		7EFAA37827EC66A700339337 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EFAA37627EC66A700339337 /* HeaderTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E0843F727E46C6900C9D459 /* BillManegerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillManegerViewModel.swift; sourceTree = "<group>"; };
 		7E38B50C27E3402200AFFA7D /* MilkBillManeger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MilkBillManeger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E38B50F27E3402200AFFA7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7E38B51127E3402200AFFA7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +38,20 @@
 		7E38B51827E3402400AFFA7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7E38B51B27E3402400AFFA7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E38B51D27E3402400AFFA7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7E38B52427E3428200AFFA7D /* BillManegerRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillManegerRealm.swift; sourceTree = "<group>"; };
+		7E38B52727E3439700AFFA7D /* AddDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDataViewController.swift; sourceTree = "<group>"; };
+		7E391D1927E99BD300E72849 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		7E391D1C27E99BEF00E72849 /* FilterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FilterView.xib; sourceTree = "<group>"; };
+		7E3DD92227EC2F5E00FB0081 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		7E4612E327E85F9A000B0607 /* ShowDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDataTableViewCell.swift; sourceTree = "<group>"; };
+		7E4612E427E85F9A000B0607 /* ShowDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowDataTableViewCell.xib; sourceTree = "<group>"; };
+		7E586BC027EC313000E75590 /* BillCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillCalculatorViewController.swift; sourceTree = "<group>"; };
+		7EC6921027E897C8001AC299 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		7EFAA37527EC66A700339337 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		7EFAA37627EC66A700339337 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
+		8379C03456F66E2E3400456E /* Pods-MilkBillManeger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkBillManeger.debug.xcconfig"; path = "Target Support Files/Pods-MilkBillManeger/Pods-MilkBillManeger.debug.xcconfig"; sourceTree = "<group>"; };
+		B01DC46D9BB7437999F8FFAA /* Pods-MilkBillManeger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkBillManeger.release.xcconfig"; path = "Target Support Files/Pods-MilkBillManeger/Pods-MilkBillManeger.release.xcconfig"; sourceTree = "<group>"; };
+		E6515ACBB10642D023FAD5AD /* Pods_MilkBillManeger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MilkBillManeger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +59,55 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76AFE88810E902F14CB038DD /* Pods_MilkBillManeger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E0843FA27E46D1A00C9D459 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7E38B52427E3428200AFFA7D /* BillManegerRealm.swift */,
+				7EC6921027E897C8001AC299 /* DataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7E0843FB27E46D2800C9D459 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7E0843FC27E46D3500C9D459 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7E0843F727E46C6900C9D459 /* BillManegerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7E0843FD27E46D4300C9D459 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7E38B51327E3402200AFFA7D /* ViewController.swift */,
+				7E38B52727E3439700AFFA7D /* AddDataViewController.swift */,
+				7E3DD92227EC2F5E00FB0081 /* SettingsViewController.swift */,
+				7E586BC027EC313000E75590 /* BillCalculatorViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		7E38B50327E3402200AFFA7D = {
 			isa = PBXGroup;
 			children = (
 				7E38B50E27E3402200AFFA7D /* MilkBillManeger */,
 				7E38B50D27E3402200AFFA7D /* Products */,
+				AA66E047085E1BFB1EA76101 /* Pods */,
+				90876C8D6AB0F0E8DA2E39A3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +124,39 @@
 			children = (
 				7E38B50F27E3402200AFFA7D /* AppDelegate.swift */,
 				7E38B51127E3402200AFFA7D /* SceneDelegate.swift */,
-				7E38B51327E3402200AFFA7D /* ViewController.swift */,
 				7E38B51527E3402200AFFA7D /* Main.storyboard */,
 				7E38B51827E3402400AFFA7D /* Assets.xcassets */,
 				7E38B51A27E3402400AFFA7D /* LaunchScreen.storyboard */,
 				7E38B51D27E3402400AFFA7D /* Info.plist */,
+				7E0843FA27E46D1A00C9D459 /* Model */,
+				7E0843FB27E46D2800C9D459 /* View */,
+				7E0843FC27E46D3500C9D459 /* ViewModel */,
+				7E0843FD27E46D4300C9D459 /* Controller */,
+				7E4612E327E85F9A000B0607 /* ShowDataTableViewCell.swift */,
+				7E4612E427E85F9A000B0607 /* ShowDataTableViewCell.xib */,
+				7E391D1927E99BD300E72849 /* FilterView.swift */,
+				7E391D1C27E99BEF00E72849 /* FilterView.xib */,
+				7EFAA37527EC66A700339337 /* HeaderTableViewCell.swift */,
+				7EFAA37627EC66A700339337 /* HeaderTableViewCell.xib */,
 			);
 			path = MilkBillManeger;
+			sourceTree = "<group>";
+		};
+		90876C8D6AB0F0E8DA2E39A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6515ACBB10642D023FAD5AD /* Pods_MilkBillManeger.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA66E047085E1BFB1EA76101 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8379C03456F66E2E3400456E /* Pods-MilkBillManeger.debug.xcconfig */,
+				B01DC46D9BB7437999F8FFAA /* Pods-MilkBillManeger.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +166,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E38B52027E3402400AFFA7D /* Build configuration list for PBXNativeTarget "MilkBillManeger" */;
 			buildPhases = (
+				CC25DA6D271236BF43E2325D /* [CP] Check Pods Manifest.lock */,
 				7E38B50827E3402200AFFA7D /* Sources */,
 				7E38B50927E3402200AFFA7D /* Frameworks */,
 				7E38B50A27E3402200AFFA7D /* Resources */,
+				6CCB54744E52A04E18404CB0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,22 +218,76 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E391D1D27E99BEF00E72849 /* FilterView.xib in Resources */,
+				7E4612E627E85F9A000B0607 /* ShowDataTableViewCell.xib in Resources */,
 				7E38B51C27E3402400AFFA7D /* LaunchScreen.storyboard in Resources */,
 				7E38B51927E3402400AFFA7D /* Assets.xcassets in Resources */,
+				7EFAA37827EC66A700339337 /* HeaderTableViewCell.xib in Resources */,
 				7E38B51727E3402200AFFA7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6CCB54744E52A04E18404CB0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MilkBillManeger/Pods-MilkBillManeger-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MilkBillManeger/Pods-MilkBillManeger-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MilkBillManeger/Pods-MilkBillManeger-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC25DA6D271236BF43E2325D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MilkBillManeger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7E38B50827E3402200AFFA7D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E38B52527E3428200AFFA7D /* BillManegerRealm.swift in Sources */,
 				7E38B51427E3402200AFFA7D /* ViewController.swift in Sources */,
 				7E38B51027E3402200AFFA7D /* AppDelegate.swift in Sources */,
+				7E3DD92327EC2F5E00FB0081 /* SettingsViewController.swift in Sources */,
+				7EFAA37727EC66A700339337 /* HeaderTableViewCell.swift in Sources */,
+				7E4612E527E85F9A000B0607 /* ShowDataTableViewCell.swift in Sources */,
+				7E391D1A27E99BD300E72849 /* FilterView.swift in Sources */,
 				7E38B51227E3402200AFFA7D /* SceneDelegate.swift in Sources */,
+				7E586BC127EC313000E75590 /* BillCalculatorViewController.swift in Sources */,
+				7EC6921127E897C8001AC299 /* DataModel.swift in Sources */,
+				7E38B52827E3439700AFFA7D /* AddDataViewController.swift in Sources */,
+				7E0843F827E46C6900C9D459 /* BillManegerViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +431,7 @@
 		};
 		7E38B52127E3402400AFFA7D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8379C03456F66E2E3400456E /* Pods-MilkBillManeger.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +451,7 @@
 		};
 		7E38B52227E3402400AFFA7D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B01DC46D9BB7437999F8FFAA /* Pods-MilkBillManeger.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
