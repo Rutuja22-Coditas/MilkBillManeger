@@ -27,7 +27,7 @@ enum Rate : Int{
     case buffaloMilkRate
 }
 
-class dataToPrintInBillCalculator{
+class DataToPrintInBillCalculator{
     var dataToPrint : [billData]?
     
     init(dataToPrint : [billData]) {

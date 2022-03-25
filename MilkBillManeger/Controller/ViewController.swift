@@ -180,7 +180,7 @@ class ViewController: UIViewController{
         floatingButton.addItem("Bill", icon: UIImage(systemName: "dollarsign.circle")) { (billButton) in
             let billCalculatorVc = self.storyboard?.instantiateViewController(identifier: BillCalculatorViewController.identifier) as? BillCalculatorViewController
             billCalculatorVc?.modalPresentationStyle = .overCurrentContext
-            //self.present(billCalculatorVc!, animated: true, completion: nil)
+           // self.present(billCalculatorVc!, animated: true, completion: nil)
             self.navigationController?.pushViewController(billCalculatorVc!, animated: true)
         }
         

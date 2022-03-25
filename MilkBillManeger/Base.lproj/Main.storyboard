@@ -510,7 +510,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eJQ-Fg-cqJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2330" y="64"/>
+            <point key="canvasLocation" x="2123" y="64"/>
         </scene>
         <!--Bill-->
         <scene sceneID="uoq-ji-HA9">
@@ -520,8 +520,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Auf-b9-TW1">
-                                <rect key="frame" x="20" y="111" width="229" height="61"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Calculator " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Auf-b9-TW1">
+                                <rect key="frame" x="20" y="44" width="229" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="3kz-Xa-HWD"/>
                                 </constraints>
@@ -530,7 +530,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PNG-TW-EXG">
-                                <rect key="frame" x="0.0" y="172" width="414" height="644"/>
+                                <rect key="frame" x="0.0" y="105" width="414" height="711"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="rvC-yz-Z5F" id="8s8-ul-EMu"/>
@@ -538,7 +538,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total - " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzE-B9-sAi">
-                                <rect key="frame" x="8" y="816" width="283" height="40"/>
+                                <rect key="frame" x="20" y="816" width="283" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="283" id="HB5-Om-A53"/>
                                 </constraints>
@@ -547,7 +547,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xY-wW-eSW">
-                                <rect key="frame" x="299" y="816" width="115" height="40"/>
+                                <rect key="frame" x="311" y="816" width="103" height="31"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -557,19 +557,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4xY-wW-eSW" firstAttribute="trailing" secondItem="jDV-7l-JRI" secondAttribute="trailing" id="2ep-Pe-J3u"/>
-                            <constraint firstItem="bzE-B9-sAi" firstAttribute="leading" secondItem="jDV-7l-JRI" secondAttribute="leading" constant="8" id="6Az-2m-92l"/>
-                            <constraint firstItem="Auf-b9-TW1" firstAttribute="top" secondItem="jDV-7l-JRI" secondAttribute="top" constant="23" id="9iw-FR-wSk"/>
+                            <constraint firstItem="bzE-B9-sAi" firstAttribute="leading" secondItem="jDV-7l-JRI" secondAttribute="leading" constant="20" id="6Az-2m-92l"/>
+                            <constraint firstItem="Auf-b9-TW1" firstAttribute="top" secondItem="jDV-7l-JRI" secondAttribute="top" id="9iw-FR-wSk"/>
                             <constraint firstItem="4xY-wW-eSW" firstAttribute="leading" secondItem="bzE-B9-sAi" secondAttribute="trailing" constant="8" id="Kzk-dx-esc"/>
                             <constraint firstAttribute="bottom" secondItem="PNG-TW-EXG" secondAttribute="bottom" constant="80" id="MBK-pq-cLt"/>
                             <constraint firstItem="jDV-7l-JRI" firstAttribute="trailing" secondItem="Auf-b9-TW1" secondAttribute="trailing" constant="165" id="b8x-N4-p8h"/>
-                            <constraint firstItem="jDV-7l-JRI" firstAttribute="bottom" secondItem="4xY-wW-eSW" secondAttribute="bottom" constant="6" id="bLX-F1-gXa"/>
+                            <constraint firstItem="jDV-7l-JRI" firstAttribute="bottom" secondItem="4xY-wW-eSW" secondAttribute="bottom" constant="15" id="bLX-F1-gXa"/>
                             <constraint firstItem="4xY-wW-eSW" firstAttribute="top" secondItem="PNG-TW-EXG" secondAttribute="bottom" id="bv5-0U-Wix"/>
                             <constraint firstItem="PNG-TW-EXG" firstAttribute="leading" secondItem="jDV-7l-JRI" secondAttribute="leading" id="dca-UR-CWL"/>
                             <constraint firstItem="PNG-TW-EXG" firstAttribute="trailing" secondItem="jDV-7l-JRI" secondAttribute="trailing" id="jn3-9g-YbX"/>
                             <constraint firstItem="Auf-b9-TW1" firstAttribute="leading" secondItem="jDV-7l-JRI" secondAttribute="leading" constant="20" id="oMa-sy-97m"/>
                             <constraint firstItem="bzE-B9-sAi" firstAttribute="top" secondItem="PNG-TW-EXG" secondAttribute="bottom" id="s5D-jG-aAh"/>
                             <constraint firstItem="PNG-TW-EXG" firstAttribute="top" secondItem="Auf-b9-TW1" secondAttribute="bottom" id="tuC-iP-Yzp"/>
-                            <constraint firstItem="jDV-7l-JRI" firstAttribute="bottom" secondItem="bzE-B9-sAi" secondAttribute="bottom" constant="6" id="uWs-Dh-mua"/>
+                            <constraint firstItem="jDV-7l-JRI" firstAttribute="bottom" secondItem="bzE-B9-sAi" secondAttribute="bottom" constant="15" id="uWs-Dh-mua"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Bill" id="zzO-vj-4Tr"/>
@@ -580,7 +580,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43z-35-YTd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4050.7246376811599" y="63.616071428571423"/>
+            <point key="canvasLocation" x="2906" y="64"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wAN-Jp-1cX">
@@ -599,24 +599,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05q-QZ-Woi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-184.05797101449278" y="63.616071428571423"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="QAu-cB-P9M">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YNC-pj-6HG" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FEl-KI-AT4">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="rvC-yz-Z5F" kind="relationship" relationship="rootViewController" id="zSj-pO-jZP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fh0-Ky-jie" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3140.579710144928" y="63.616071428571423"/>
         </scene>
     </scenes>
     <resources>

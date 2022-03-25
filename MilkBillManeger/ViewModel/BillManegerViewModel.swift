@@ -16,9 +16,18 @@ class BillManegerViewModel {
     var arrayOfResultInViewModel  = [BillManeger]()
     
     var test = [BillManeger]()
-    var cowMilkRate : Int?
-    var buffaloMilkRate : Int?
+    var cowMilkRate : Int = 0
+    var cowMilkTotal : Float = 0.0
+    var cowMilkTotalLiter : Float = 0.0
+
     var milkType : MilkType?
+    
+    var buffaloMilkRate : Int = 0
+    var buffaloMilkTotalLiter : Float = 0.0
+    var buffaloMilkTotal : Float = 0.0
+
+    var totalAmount : Float = 0.0
+    var dataOfBill : DataToPrintInBillCalculator?
     
 //MARK: - SAVE DATA
     func saveData(object: BillManeger){
@@ -89,5 +98,25 @@ class BillManegerViewModel {
             arrayOfResultInViewModel.append(i)
         }
         completion(arrayOfResultInViewModel)
+    }
+    
+    func fetchResultForBillCalculation(completion: @escaping(DataToPrintInBillCalculator,Float)->()){
+        objectOfResult = realm.objects(BillManeger.self)
+        for i in objectOfResult{
+            if i.typeOfMilk == MilkType.cow.rawValue{
+                cowMilkTotalLiter += i.liter
+                cowMilkRate = i.rate
+            }
+            else if i.typeOfMilk == MilkType.buffalo.rawValue{
+                buffaloMilkTotalLiter += i.liter
+                buffaloMilkRate = i.rate
+            }
+        }
+        cowMilkTotal = cowMilkTotalLiter * Float(cowMilkRate)
+        buffaloMilkTotal = buffaloMilkTotalLiter * Float(buffaloMilkRate)
+        totalAmount = cowMilkTotal + buffaloMilkTotal
+        dataOfBill = DataToPrintInBillCalculator(dataToPrint: [billData(milkType: "Cow", liter: cowMilkTotalLiter, rate: cowMilkRate, total: cowMilkTotal), billData(milkType: "Buffalo", liter: buffaloMilkTotalLiter, rate: buffaloMilkRate, total: buffaloMilkTotal)])
+        
+        completion(dataOfBill!,totalAmount)
     }
 }

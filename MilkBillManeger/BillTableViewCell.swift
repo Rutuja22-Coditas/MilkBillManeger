@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HeaderTableViewCell: UITableViewCell {
+class BillTableViewCell: UITableViewCell {
 
     @IBOutlet weak var headerStackView: UIStackView!
     @IBOutlet weak var typeLbl: UILabel!
@@ -15,7 +15,7 @@ class HeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var rateLbl: UILabel!
     @IBOutlet weak var totalLbl: UILabel!
     
-    static let identifier = String(describing: HeaderTableViewCell.self)
+    static let identifier = String(describing: BillTableViewCell.self)
     var arrayOfLbls = [UILabel]()
     
     override func awakeFromNib() {

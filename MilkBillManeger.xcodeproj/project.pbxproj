@@ -23,9 +23,11 @@
 		7E4612E527E85F9A000B0607 /* ShowDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4612E327E85F9A000B0607 /* ShowDataTableViewCell.swift */; };
 		7E4612E627E85F9A000B0607 /* ShowDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E4612E427E85F9A000B0607 /* ShowDataTableViewCell.xib */; };
 		7E586BC127EC313000E75590 /* BillCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E586BC027EC313000E75590 /* BillCalculatorViewController.swift */; };
+		7E734E2C27EC9D05000D9669 /* BillCalculatorTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E734E2B27EC9D05000D9669 /* BillCalculatorTableHeaderView.swift */; };
+		7E734E2F27EC9D10000D9669 /* BillCalculatorTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E734E2E27EC9D10000D9669 /* BillCalculatorTableHeaderView.xib */; };
 		7EC6921127E897C8001AC299 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC6921027E897C8001AC299 /* DataModel.swift */; };
-		7EFAA37727EC66A700339337 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFAA37527EC66A700339337 /* HeaderTableViewCell.swift */; };
-		7EFAA37827EC66A700339337 /* HeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EFAA37627EC66A700339337 /* HeaderTableViewCell.xib */; };
+		7EFAA37727EC66A700339337 /* BillTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFAA37527EC66A700339337 /* BillTableViewCell.swift */; };
+		7EFAA37827EC66A700339337 /* BillTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EFAA37627EC66A700339337 /* BillTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,9 +48,11 @@
 		7E4612E327E85F9A000B0607 /* ShowDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDataTableViewCell.swift; sourceTree = "<group>"; };
 		7E4612E427E85F9A000B0607 /* ShowDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowDataTableViewCell.xib; sourceTree = "<group>"; };
 		7E586BC027EC313000E75590 /* BillCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillCalculatorViewController.swift; sourceTree = "<group>"; };
+		7E734E2B27EC9D05000D9669 /* BillCalculatorTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillCalculatorTableHeaderView.swift; sourceTree = "<group>"; };
+		7E734E2E27EC9D10000D9669 /* BillCalculatorTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BillCalculatorTableHeaderView.xib; sourceTree = "<group>"; };
 		7EC6921027E897C8001AC299 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		7EFAA37527EC66A700339337 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
-		7EFAA37627EC66A700339337 /* HeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderTableViewCell.xib; sourceTree = "<group>"; };
+		7EFAA37527EC66A700339337 /* BillTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillTableViewCell.swift; sourceTree = "<group>"; };
+		7EFAA37627EC66A700339337 /* BillTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BillTableViewCell.xib; sourceTree = "<group>"; };
 		8379C03456F66E2E3400456E /* Pods-MilkBillManeger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkBillManeger.debug.xcconfig"; path = "Target Support Files/Pods-MilkBillManeger/Pods-MilkBillManeger.debug.xcconfig"; sourceTree = "<group>"; };
 		B01DC46D9BB7437999F8FFAA /* Pods-MilkBillManeger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MilkBillManeger.release.xcconfig"; path = "Target Support Files/Pods-MilkBillManeger/Pods-MilkBillManeger.release.xcconfig"; sourceTree = "<group>"; };
 		E6515ACBB10642D023FAD5AD /* Pods_MilkBillManeger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MilkBillManeger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,8 +140,10 @@
 				7E4612E427E85F9A000B0607 /* ShowDataTableViewCell.xib */,
 				7E391D1927E99BD300E72849 /* FilterView.swift */,
 				7E391D1C27E99BEF00E72849 /* FilterView.xib */,
-				7EFAA37527EC66A700339337 /* HeaderTableViewCell.swift */,
-				7EFAA37627EC66A700339337 /* HeaderTableViewCell.xib */,
+				7EFAA37527EC66A700339337 /* BillTableViewCell.swift */,
+				7EFAA37627EC66A700339337 /* BillTableViewCell.xib */,
+				7E734E2B27EC9D05000D9669 /* BillCalculatorTableHeaderView.swift */,
+				7E734E2E27EC9D10000D9669 /* BillCalculatorTableHeaderView.xib */,
 			);
 			path = MilkBillManeger;
 			sourceTree = "<group>";
@@ -218,11 +224,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E734E2F27EC9D10000D9669 /* BillCalculatorTableHeaderView.xib in Resources */,
 				7E391D1D27E99BEF00E72849 /* FilterView.xib in Resources */,
 				7E4612E627E85F9A000B0607 /* ShowDataTableViewCell.xib in Resources */,
 				7E38B51C27E3402400AFFA7D /* LaunchScreen.storyboard in Resources */,
 				7E38B51927E3402400AFFA7D /* Assets.xcassets in Resources */,
-				7EFAA37827EC66A700339337 /* HeaderTableViewCell.xib in Resources */,
+				7EFAA37827EC66A700339337 /* BillTableViewCell.xib in Resources */,
 				7E38B51727E3402200AFFA7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,9 +285,10 @@
 			files = (
 				7E38B52527E3428200AFFA7D /* BillManegerRealm.swift in Sources */,
 				7E38B51427E3402200AFFA7D /* ViewController.swift in Sources */,
+				7E734E2C27EC9D05000D9669 /* BillCalculatorTableHeaderView.swift in Sources */,
 				7E38B51027E3402200AFFA7D /* AppDelegate.swift in Sources */,
 				7E3DD92327EC2F5E00FB0081 /* SettingsViewController.swift in Sources */,
-				7EFAA37727EC66A700339337 /* HeaderTableViewCell.swift in Sources */,
+				7EFAA37727EC66A700339337 /* BillTableViewCell.swift in Sources */,
 				7E4612E527E85F9A000B0607 /* ShowDataTableViewCell.swift in Sources */,
 				7E391D1A27E99BD300E72849 /* FilterView.swift in Sources */,
 				7E38B51227E3402200AFFA7D /* SceneDelegate.swift in Sources */,
