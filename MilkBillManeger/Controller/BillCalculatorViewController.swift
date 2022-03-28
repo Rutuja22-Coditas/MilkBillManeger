@@ -15,64 +15,30 @@ class BillCalculatorViewController: UIViewController, UITableViewDelegate, UITab
     
     static let identifier = String(describing: BillCalculatorViewController.self)
     
-    let realm = try! Realm()
-    var cowMilkRate : Int?
-    var cowMilkTotal : Float?
-    var cowMilkTotalLiter : Float = 0.0
-    
-    var buffaloMilkRate : Int?
-    var buffaloMilkTotal : Float?
-    var buffaloMilkTotalLiter : Float = 0.0
-    var totalAmount : Float = 0.0
     var dataToPrintInTable : DataToPrintInBillCalculator?
     var viewModel = BillManegerViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Pdf", style: .plain, target: self, action: #selector(pdfButtonClicked))
         billTableView.register(UINib(nibName: BillTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: BillTableViewCell.identifier)
         billTableView.register(UINib(nibName: BillCalculatorTableHeaderView.identifier, bundle: nil), forHeaderFooterViewReuseIdentifier: BillCalculatorTableHeaderView.identifier)
         
-      //  DispatchQueue.main.async {
-            self.viewModel.fetchResultForBillCalculation { (arrayData, totalValue) in
+        self.viewModel.fetchResultForBillCalculation { (arrayData, totalValue) in
                 self.dataToPrintInTable = arrayData
-                //self.totalAmount = totalValue
-            //}
                 self.totalCalculatedValueLbl.text = "₹\(totalValue)/-"
             print("dataToPrintInTable",self.dataToPrintInTable!)
 
         }
-       
-        //filterData()
-        
-//         DispatchQueue.main.async {
-//             self.dataToPrintInTable = DataToPrintInBillCalculator(dataToPrint: [billData(milkType: "Cow", liter: self.cowMilkTotalLiter, rate: self.cowMilkRate!, total: self.cowMilkTotal!),
-//                 billData(milkType: "Buffalo", liter: self.buffaloMilkTotalLiter, rate:self.buffaloMilkRate!, total: self.buffaloMilkTotal!)])
-//             print(self.dataToPrintInTable!.dataToPrint!)
-//             self.totalCalculatedValueLbl.text = "\(self.cowMilkTotal! + self.buffaloMilkTotal!)/-"
-//         }
     }
-    
-    func filterData(){
-        let results = realm.objects(BillManeger.self)
         
-        for i in results{
-            if i.typeOfMilk == MilkType.cow.rawValue{
-                cowMilkTotalLiter += i.liter
-                cowMilkRate = i.rate
-            }
-            else if i.typeOfMilk == MilkType.buffalo.rawValue {
-                buffaloMilkTotalLiter += i.liter
-                buffaloMilkRate = i.rate
-            }
-            
-        }
-        cowMilkTotal = cowMilkTotalLiter * Float(cowMilkRate!)
-        buffaloMilkTotal = buffaloMilkTotalLiter * Float(buffaloMilkRate!)
-        //totalAmount =
-       
-   
+    @objc func pdfButtonClicked(){
+        let newVC = storyboard?.instantiateViewController(identifier: PDFViewController.identifier) as? PDFViewController
+        let pdfCreator = PDFCreator()
+        newVC?.documentData = pdfCreator.createFlyer()
+        self.navigationController?.pushViewController(newVC!, animated: true)
+        
     }
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = billTableView.dequeueReusableHeaderFooterView(withIdentifier: BillCalculatorTableHeaderView.identifier) as? BillCalculatorTableHeaderView
         return headerView

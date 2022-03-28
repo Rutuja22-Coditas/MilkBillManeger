@@ -206,12 +206,13 @@ extension FilterView : UITextFieldDelegate{
             selectedTextField = lastDateTxtFld
         }
         if textField == startDateTxtFld || textField == lastDateTxtFld{
+            containerView.endEditing(true)
             datePicker.isHidden = false
             datePickerButtnsView.isHidden = false
         }
         else{
             //textField.resignFirstResponder()
-            textField.endEditing(true)
+            //textField.endEditing(true)
             datePicker.isHidden = true
             datePickerButtnsView.isHidden = true
         }
@@ -224,5 +225,9 @@ extension FilterView : UITextFieldDelegate{
         }
         
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return false
+      }
 }
 

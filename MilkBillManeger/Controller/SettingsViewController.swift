@@ -53,7 +53,5 @@ class SettingsViewController: UIViewController {
         cowMilkRateLbl.text = cowMilkRateTxtFld.text
         buffaloMilkRateLbl.text =  buffaloMilkRateTxtFld.text
         
-        
-        self.dismiss(animated: true, completion: nil)
     }
 }

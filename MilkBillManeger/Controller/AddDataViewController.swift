@@ -108,6 +108,7 @@ class AddDataViewController: UIViewController {
         view.endEditing(true)
     }
     func editData(data: BillManeger){
+        litreStepper.minimumValue = Double(data.liter)
         litreTxtFld.text = "\(data.liter)"
         liter1 = litreTxtFld.text!
         if data.typeOfMilk == "cow"{
@@ -139,22 +140,22 @@ class AddDataViewController: UIViewController {
     
     @objc func DoneButtonToSaveData(){
 
-        if let convertedValue = Float(litreTxtFld.text!){
-            milkDataObject.liter = convertedValue
-        }
-        dateFormatter.dateStyle = .medium
-        dateFormatter.dateFormat = "EEEE, dd MM yyyy"
-        let dateInString = dateFormatter.date(from: dateTxtFld.text!)!
-        milkDataObject.date = dateInString
-        
-        milkDataObject.typeOfMilk = milkTypeSelected.rawValue
-//        if milkTypeCowRadioButtn.isSelected {
-//            milkDataObject.typeOfMilk = MilkType.cow.rawValue
+//        if let convertedValue = Float(litreTxtFld.text!){
+//            milkDataObject.liter = convertedValue
 //        }
-//        else if milkTypeBuffeloRadioButtn.isSelected {
-//            milkDataObject.typeOfMilk = MilkType.buffalo.rawValue
-//        }
-        milkDataObject.comment = commentTxtFld.text
+//        dateFormatter.dateStyle = .medium
+//        dateFormatter.dateFormat = "EEEE, dd MM yyyy"
+//        let dateInString = dateFormatter.date(from: dateTxtFld.text!)!
+//        milkDataObject.date = dateInString
+//
+//        milkDataObject.typeOfMilk = milkTypeSelected.rawValue
+////        if milkTypeCowRadioButtn.isSelected {
+////            milkDataObject.typeOfMilk = MilkType.cow.rawValue
+////        }
+////        else if milkTypeBuffeloRadioButtn.isSelected {
+////            milkDataObject.typeOfMilk = MilkType.buffalo.rawValue
+////        }
+//        milkDataObject.comment = commentTxtFld.text
         
         if litreTxtFld.text == "0.00"{
             showAlert(message: "Enter the amount of litre you want", titleForAlert: "Invalid Litre Count")
@@ -174,28 +175,40 @@ class AddDataViewController: UIViewController {
                     milkTypeInEditingMode = .cow
                 }
                 if litreTxtFld.text != liter1 || dateTxtFld.text != date1 || commentTxtFld.text != comment1 || milkTypeInEditingMode.rawValue != milkType1{
-                    //viewModel.updateData(object: milkDataObject)
-//                    let result = realm.objects(BillManeger.self)
-//                    let result1 = realm.objects(BillManeger.self).first
-//                    if self.checkPrimartyKey(taskId: (result1?.taskId!)!){
-//
-//                        try! realm.write{
-//                            realm.add(result,update: .modified)
-//                        }
-//                        }
-//                    else{
-//                        try! realm.write{
-//                            realm.add(result)
-//                        }
-//
-//                    }
-                    let result = realm.object(ofType: BillManeger.self, forPrimaryKey: "44FE51CE-1FAD-4BA1-BB30-737059A95439")!
-                    try! realm.write{
-                        realm.add(result, update: .all)
+                    
+                    let copy = realm.objects(BillManeger.self).detached.first?.detached()
+                    //print("copy",copy.first?.detached() as Any)
+                    if let convertedValue = Float(litreTxtFld.text!){
+                        copy!.liter = convertedValue
                     }
-                   
+                    dateFormatter.dateStyle = .medium
+                    dateFormatter.dateFormat = "EEEE, dd MM yyyy"
+                    let dateInString = dateFormatter.date(from: dateTxtFld.text!)!
+                    copy!.date = dateInString
+                    copy!.typeOfMilk = milkTypeInEditingMode.rawValue
+                    copy?.comment = commentTxtFld.text
+                    
+                    print("copy",copy!)
+                    viewModel.updateData(object: copy!)
                 }
+                
             case .add:
+                if let convertedValue = Float(litreTxtFld.text!){
+                    milkDataObject.liter = convertedValue
+                }
+                dateFormatter.dateStyle = .medium
+                dateFormatter.dateFormat = "EEEE, dd MM yyyy"
+                let dateInString = dateFormatter.date(from: dateTxtFld.text!)!
+                milkDataObject.date = dateInString
+                
+                milkDataObject.typeOfMilk = milkTypeSelected.rawValue
+        //        if milkTypeCowRadioButtn.isSelected {
+        //            milkDataObject.typeOfMilk = MilkType.cow.rawValue
+        //        }
+        //        else if milkTypeBuffeloRadioButtn.isSelected {
+        //            milkDataObject.typeOfMilk = MilkType.buffalo.rawValue
+        //        }
+                milkDataObject.comment = commentTxtFld.text
                 dictToPassData = ["caseToWorkOn":"save"]
 
                 print("add")
@@ -229,45 +242,6 @@ class AddDataViewController: UIViewController {
         datePicker.isHidden = true
     }
     
-//    @IBAction func radioButtonAction(_ sender: UIButton) {
-//        view.endEditing(true)
-//        if sender.tag == 1{
-//            milkTypeCowRadioButtn.isSelected = true
-//            milkTypeBuffeloRadioButtn.isSelected = false
-//        }
-//        else if sender.tag == 2{
-//            milkTypeCowRadioButtn.isSelected = false
-//            milkTypeBuffeloRadioButtn.isSelected = true
-//        }
-//
-//    }
-    //    @objc func cowRadioButtonSelected(_ sender:UIButton){
-//        milkTypeCowRadioButtn.setImage(UIImage(systemName: "largecircle.fill.circle"), for: .selected)
-//        milkTypeBuffeloRadioButtn.setImage(UIImage(systemName: "circle"), for: .normal)
-//
-//        milkTypeCowRadioButtn.tintColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
-//        milkTypeBuffeloRadioButtn.tintColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
-//       // setMilkType(false)
-//    }
-//
-//    @objc func buffeloRadioButtonSelected(_ sender:UIButton){
-//        milkTypeBuffeloRadioButtn.setImage(UIImage(systemName: "largecircle.fill.circle"), for: .selected)
-//        milkTypeCowRadioButtn.setImage(UIImage(systemName: "circle"), for: .normal)
-//
-//
-//       // setMilkType(true)
-//    }
-//
-//    func setMilkType(_ isBuffeloselected:Bool){
-//        if isBuffeloselected{
-//            milkTypeCowRadioButtn.isSelected = false
-//            milkTypeBuffeloRadioButtn.isSelected = true
-//        }
-//        else{
-//            milkTypeCowRadioButtn.isSelected = true
-//            milkTypeBuffeloRadioButtn.isSelected = false
-//        }
-//    }
     func setUpUI(){
         litreStepper.layer.cornerRadius = 2.0
         addDataView.layer.cornerRadius = 10.0
@@ -383,5 +357,43 @@ extension AddDataViewController : UITextFieldDelegate{
         
     }
     
+}
+protocol RealmListDetachable {
+
+ func detached() -> Self
+}
+
+extension List: RealmListDetachable where Element: Object {
+
+ func detached() -> List<Element> {
+     let detached = self.detached
+    let result = List<Element>()
+     result.append(objectsIn: detached)
+     return result
+ }
+}
+
+@objc extension Object {
+  public func detached() -> Self {
+    let detached = type(of: self).init()
+    for property in objectSchema.properties {
+      guard let value = value(forKey: property.name) else { continue }
+      if let detachable = value as? Object {
+        detached.setValue(detachable.detached(), forKey: property.name)
+      } else if let list = value as? RealmListDetachable {
+        detached.setValue(list.detached(), forKey: property.name)
+      } else {
+        detached.setValue(value, forKey: property.name)
+      }
+    }
+    return detached
+  }
+}
+extension Sequence where Iterator.Element: Object {
+
+    public var detached: [Element] {
+        return self.map({ $0.detached() })
+    }
+
 }
 

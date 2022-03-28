@@ -29,10 +29,14 @@ class BillManegerViewModel {
     var totalAmount : Float = 0.0
     var dataOfBill : DataToPrintInBillCalculator?
     
+    var cowMilkRateToSave : Int = 0
+    var buffaloMilkRateToSave : Int = 0
+    
 //MARK: - SAVE DATA
     func saveData(object: BillManeger){
         
         try! realm.write{
+            
             realm.add(object)
         }
     }
@@ -45,6 +49,7 @@ class BillManegerViewModel {
 //MARK: - UPDATE DATA
     func updateData(object : BillManeger){
         try! realm.write{
+            print("objectInVM",object)
             realm.add(object, update: .all)
         }
     }

@@ -14,14 +14,17 @@ class ViewController: UIViewController{
     @IBOutlet weak var filterButtonView: FilterView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var floatingButton: Floaty!
-    @IBOutlet weak var noResultsFoundLbl: UILabel!
+   // @IBOutlet weak var noResultsFoundLbl: UILabel!
     var billViewModel = BillManegerViewModel()
     var allDataInResult = [BillManeger]()
     var filterDataCase : FilterData?
     var addDataViewController = AddDataViewController()
-    
+    let noResultFoundLabel = UILabel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("realm", Realm.Configuration.defaultConfiguration.fileURL!)
+        noResultFoundLabel.isHidden = true
         filterButtonView.isHidden = true
         floatingButton.isHidden = false
         addItemToFloatingButton()
@@ -32,7 +35,6 @@ class ViewController: UIViewController{
         tableView.separatorStyle = .none
     
         NotificationCenter.default.addObserver(self, selector: #selector(reloadTableView), name: Notification.Name("NotificationIdentifier"), object: nil)
-        print("realm", Realm.Configuration.defaultConfiguration.fileURL!)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "slider.vertical.3"), style: .plain, target: self, action: #selector(filterButtonClicked))
         filterButtonView.isOpaque = false
         filterButtonView.backgroundColor = .clear
@@ -45,7 +47,12 @@ class ViewController: UIViewController{
         case .all:
             loadAllData()
         case .byDate:
-            loadByDateFilteredData()
+            if filterButtonView.startDate == nil || filterButtonView.endDate == nil{
+                addDataViewController.showAlert(message: "Please enter start date And end date", titleForAlert: "Filter Error!")
+            }
+            else{
+                loadByDateFilteredData()
+            }
         case .byMilkType:
             loadByMilkTypeFilteredData()
         case .byDateAndMilkType:
@@ -60,7 +67,7 @@ class ViewController: UIViewController{
         billViewModel.fetchAllResult { (data) in
             self.allDataInResult.removeAll()
             self.allDataInResult = data
-            print("ALL DATAA",self.allDataInResult)
+            print("ALL DATA",self.allDataInResult)
             self.tableView.reloadData()
         }
     }
@@ -141,6 +148,7 @@ class ViewController: UIViewController{
         if filterButtonView.isHidden {
             floatingButton.isHidden = true
             filterButtonView.isHidden = false
+            resetAllData()
         }
         else{
             filterButtonView.isHidden = true
@@ -186,6 +194,8 @@ class ViewController: UIViewController{
         
         self.view.addSubview(floatingButton)
 }
+ 
+    
 
 }
 
@@ -194,21 +204,24 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if allDataInResult.count == 0{
             addDataViewController.showAlert(message: "Please Apply valid filter options", titleForAlert: "Invalid Selection")
-            let label = UILabel()
             //let x = label.center.x
+            noResultFoundLabel.isHidden = false
 
-            label.frame = CGRect(x: 50, y: view.center.y, width: 300, height: 100)
-            label.textAlignment = .center
-            label.text = "No Result Found!"
-            label.font = UIFont(name: "Halvetica", size: 90)
-            label.textColor = .black
-            view.addSubview(label)
-            tableView.backgroundView = label
-
+            noResultFoundLabel.frame = CGRect(x: 50, y: view.center.y, width: 300, height: 100)
+            noResultFoundLabel.textAlignment = .center
+            noResultFoundLabel.text = "No Result Found!"
+            noResultFoundLabel.font = UIFont(name: "Halvetica", size: 90)
+            noResultFoundLabel.textColor = .black
+            view.addSubview(noResultFoundLabel)
+            tableView.backgroundView = noResultFoundLabel
            // noResultsFoundLbl.isHidden = false
            // tableView.isHidden = true
         }
-        noResultsFoundLbl.isHidden = true
+        else{
+            noResultFoundLabel.isHidden = true
+        }
+       // noResultsFoundLbl.isHidden = true
+       // noResultFoundLabel.isHidden = true
         return allDataInResult.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -219,7 +232,7 @@ extension ViewController : UITableViewDelegate, UITableViewDataSource{
         return cell!
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 110
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
