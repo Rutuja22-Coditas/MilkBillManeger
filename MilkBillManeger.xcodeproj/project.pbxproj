@@ -86,6 +86,7 @@
 		7E0843FB27E46D2800C9D459 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7EDEA31A27F435B900DFA2E6 /* TableViewCells */,
 				7E38B51527E3402200AFFA7D /* Main.storyboard */,
 				7E38B51A27E3402400AFFA7D /* LaunchScreen.storyboard */,
 			);
@@ -152,6 +153,13 @@
 				7E1C43C227F1D524007E7094 /* PDFCreator.swift */,
 			);
 			path = MilkBillManeger;
+			sourceTree = "<group>";
+		};
+		7EDEA31A27F435B900DFA2E6 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		90876C8D6AB0F0E8DA2E39A3 /* Frameworks */ = {

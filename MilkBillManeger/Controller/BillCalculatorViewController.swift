@@ -8,6 +8,9 @@
 import UIKit
 import RealmSwift
 
+//protocol ValuePass {
+//    func billValue(cowMilkTotal,cowMilkLtr,buffaloMilkTotal,buffaloMilkLtr,)
+//}
 class BillCalculatorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
   
     @IBOutlet weak var billTableView: UITableView!
@@ -16,6 +19,7 @@ class BillCalculatorViewController: UIViewController, UITableViewDelegate, UITab
     static let identifier = String(describing: BillCalculatorViewController.self)
     
     var dataToPrintInTable : DataToPrintInBillCalculator?
+    //var dataToPrintInTable : [BillManeger]?
     var viewModel = BillManegerViewModel()
     
     override func viewDidLoad() {
@@ -37,8 +41,8 @@ class BillCalculatorViewController: UIViewController, UITableViewDelegate, UITab
         let pdfCreator = PDFCreator()
         newVC?.documentData = pdfCreator.createFlyer()
         self.navigationController?.pushViewController(newVC!, animated: true)
-        
     }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = billTableView.dequeueReusableHeaderFooterView(withIdentifier: BillCalculatorTableHeaderView.identifier) as? BillCalculatorTableHeaderView
         return headerView

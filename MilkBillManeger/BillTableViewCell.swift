@@ -35,4 +35,6 @@ class BillTableViewCell: UITableViewCell {
         totalLbl.text = "\(oneCell.total)"
     }
     
+    
+
 }

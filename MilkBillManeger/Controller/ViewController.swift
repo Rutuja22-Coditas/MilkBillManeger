@@ -14,7 +14,6 @@ class ViewController: UIViewController{
     @IBOutlet weak var filterButtonView: FilterView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var floatingButton: Floaty!
-   // @IBOutlet weak var noResultsFoundLbl: UILabel!
     var billViewModel = BillManegerViewModel()
     var allDataInResult = [BillManeger]()
     var filterDataCase : FilterData?
@@ -195,7 +194,6 @@ class ViewController: UIViewController{
         self.view.addSubview(floatingButton)
 }
  
-    
 
 }
 

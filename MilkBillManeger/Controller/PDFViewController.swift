@@ -16,14 +16,20 @@ class PDFViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        pdfView.backgroundColor = .black
         if let data = documentData {
             if let doc = PDFDocument(data: data){
                 pdfView.document = doc
                 pdfView.autoScales = true
             }
         }
-
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .plain, target: self, action: #selector(shareButtonClicked))
+    }
+    
+    @objc func shareButtonClicked(){
+        let items = [URL(string: "https://www.apple.com")!]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
     }
     
 

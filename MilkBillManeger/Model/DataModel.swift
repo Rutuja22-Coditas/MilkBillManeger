@@ -29,7 +29,7 @@ enum Rate : Int{
 
 class DataToPrintInBillCalculator{
     var dataToPrint : [billData]?
-    
+
     init(dataToPrint : [billData]) {
         self.dataToPrint = dataToPrint
     }

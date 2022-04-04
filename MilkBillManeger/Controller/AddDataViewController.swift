@@ -65,7 +65,6 @@ class AddDataViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //blurEffect()
         datePickerDoneButtn.addTarget(self, action: #selector(DateSelected), for: .touchUpInside)
         datePickerCancelButton.addTarget(self, action: #selector(cancelButtnClikedOnDatePicker), for: .touchUpInside)
         
@@ -96,19 +95,20 @@ class AddDataViewController: UIViewController {
         }
 
     }
-    
-    func blurEffect(){
-        let blurEffect = UIBlurEffect(style: .extraLight)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-        blurEffectView.frame = self.view.frame
-        self.view.insertSubview(blurEffectView, at: 0)
-    }
-    
+//
+//    func blurEffect(){
+//        let blurEffect = UIBlurEffect(style: .extraLight)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//        blurEffectView.frame = self.view.frame
+//        self.view.insertSubview(blurEffectView, at: 0)
+//    }
+//
     @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
     func editData(data: BillManeger){
-        litreStepper.minimumValue = Double(data.liter)
+        //litreStepper.minimumValue = Double(data.liter)
+        litreTxtFld.addTarget(self, action: #selector(valueChanged(sender:)), for: .valueChanged)
         litreTxtFld.text = "\(data.liter)"
         liter1 = litreTxtFld.text!
         if data.typeOfMilk == "cow"{
@@ -137,7 +137,10 @@ class AddDataViewController: UIViewController {
             comment1 = commentTxtFld.text!
         }
     }
-    
+    @objc func valueChanged(sender: UITextField){
+        litreStepper.value = Double(sender.text!)!
+        
+    }
     @objc func DoneButtonToSaveData(){
 
 //        if let convertedValue = Float(litreTxtFld.text!){
@@ -257,7 +260,7 @@ class AddDataViewController: UIViewController {
     }
     
     func setDatePicker(){
-        dateTxtFld.inputView = datePicker
+        //dateTxtFld.inputView = datePicker
         datePicker.locale = .current
         datePicker.preferredDatePickerStyle = .wheels
         datePicker.date = Date()
@@ -292,10 +295,12 @@ class AddDataViewController: UIViewController {
 
 extension AddDataViewController : UITextFieldDelegate{
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        
         if textField == litreTxtFld || textField == commentTxtFld{
             //204-244
             addDataViewTopConstraint.constant = 100
             addDataViewBottomConstraint.constant = 350
+            textField.becomeFirstResponder()
         }
         else{
             addDataViewTopConstraint.constant = 204
@@ -303,8 +308,10 @@ extension AddDataViewController : UITextFieldDelegate{
         }
        
         if textField == dateTxtFld{
-            self.view.endEditing(true)
-            //textField.resignFirstResponder()
+            //self.view.endEditing(true)
+            litreTxtFld.resignFirstResponder()
+            commentTxtFld.resignFirstResponder()
+            dateTxtFld.resignFirstResponder()
             datePicker.isHidden = false
             datePickerButtonsView.isHidden = false
         }
@@ -312,26 +319,18 @@ extension AddDataViewController : UITextFieldDelegate{
             datePicker.isHidden = true
             datePickerButtonsView.isHidden = true
         }
-        if textField == commentTxtFld{
-            
-        }
-        
+      
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         if textField == litreTxtFld{
-            // Allow to remove character (Backspace)
                 if string == "" {
                     return true
                 }
-
-               // Block multiple dot
                 if (textField.text?.contains("."))! && string == "." {
                     return false
                 }
-
-                // Check decimal places
                 if (textField.text?.contains("."))! {
                     let limitDecimalPlace = 2
                     let decimalPlace = textField.text?.components(separatedBy: ".").last
@@ -352,9 +351,9 @@ extension AddDataViewController : UITextFieldDelegate{
         
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        dateTxtFld.inputView = datePicker
+       //   dateTxtFld.inputView = datePicker
         dateTxtFld.resignFirstResponder()
-        
+
     }
     
 }
